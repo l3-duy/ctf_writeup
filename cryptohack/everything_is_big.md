@@ -1,4 +1,4 @@
-# Everything Is Still Big
+# Everything Is Big
 
 Bởi số d nhỏ (256 bit), ta có thể dùng phương pháp Wiener attack để tìm được d.
 
