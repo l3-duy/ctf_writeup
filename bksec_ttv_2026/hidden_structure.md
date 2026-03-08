@@ -14,8 +14,6 @@ Vì $P=x * y$ nên $\approx 512$ bit, ta có thể viết $P$ dưới dạng $k 
 
 $$N = (k * B + N_0)B^2 + S * B + (k * B + N_0)$$
 
-$$N = k * B^3 + N_0 * B^2 + (S + k)B + N_0 \tag{1}$$
-
 $$ => N_0 = N \pmod B$$
 
 Tìm được $N_0$, thế vào (1):
