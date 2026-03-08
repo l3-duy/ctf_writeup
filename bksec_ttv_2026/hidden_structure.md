@@ -3,18 +3,27 @@
 Nhận thấy p và q không độc lập mà phụ thuộc vào x và y, ta nghĩ tới việc tìm x và y trước.
 
 $$ N = (x * B + y)*(y * B + x ) $$
+
 $$N = xy * B^2 + (x^2 + y^2)B + xy$$
+
 Đặt $P=x*y$, $S=x^2+y^2$
 
 $$ => N = P * B^2 + S * B + P$$
 
 Vì $P=x * y$ nên $\approx 512$ bit, ta có thể viết $P$ dưới dạng $k * B+N_0$, với $B=2^{256}$
+
 $$N = (k * B + N_0)B^2 + S * B + (k * B + N_0)$$
+
 $$N = k * B^3 + N_0 * B^2 + (S + k)B + N_0 \tag{1}$$
+
 $$ => N_0 = N \pmod B$$
+
 Tìm được $N_0$, thế vào (1):
+
 $$ => M = \frac{N - N_0 * B^2 - N_0}{B} = k * B^2 + S + k$$
+
 Chia hai vế cho $B^2$, nhận thấy $\frac{S}{B^2} + \frac{k}{B^2} < \frac{2*B^2}{B^2} + \frac{k}{B^2} < 3$, dự đoán được k, từ đó xây dựng x,y theo P,S
+
 ```python
 import math
 from Crypto.Util.number import long_to_bytes, inverse
